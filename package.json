@@ -9,6 +9,7 @@
   "private": false,
   "dependencies": {
     "react": "^16.2.0",
+    "react-bootstrap": "^0.31.5",
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
