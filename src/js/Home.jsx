@@ -6,6 +6,10 @@ export default class Home extends React.Component {
         return (
             <Jumbotron>
                 <h1>gh-pages-sample</h1>
+                <p>
+                    GitHub Pagesのサンプルです。
+                    <code>package.json</code>をパクるとそれなりのReact+Bootstrap環境が生えます
+                </p>
             </Jumbotron>
         );
     }
