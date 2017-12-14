@@ -8,15 +8,7 @@ export default class Home extends React.Component {
         return (
             <div>
                 <Navigation />
-                <Grid>
-                    <Row>
-                        <Col>
-                        </Col>
-                        <Col>
-                            <Top />
-                        </Col>
-                    </Row>
-                </Grid>
+                <Top />
             </div>
         );
     }
