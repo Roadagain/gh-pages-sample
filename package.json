@@ -1,0 +1,10 @@
+{
+  "name": "gh-pages-sample",
+  "version": "0.0.1",
+  "description": "A sample repogitory for studying GitHub Pages",
+  "main": "app.js",
+  "repository": "https://github.com/Roadagain/gh-pages-sample.git",
+  "author": "Roadagain <ringoh72@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
