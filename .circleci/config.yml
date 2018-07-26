@@ -20,13 +20,18 @@ jobs:
       - run:
           name: build pages
           command: yarn run build
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - .
 
   deploy:
     docker:
       - image: circleci/node:7.10
     working_directory: ~/repo
     steps:
-      - checkout
+      - attach_workspace:
+          at: .
       - run:
           name: deploy to github pages
           command: yarn run deploy
