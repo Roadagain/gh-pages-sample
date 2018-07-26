@@ -18,6 +18,8 @@ jobs:
       - run: yarn run build
 
   deploy:
+    docker:
+      - image: circleci/node:7.10
     requires:
       - build
     filters:
