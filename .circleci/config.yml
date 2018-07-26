@@ -16,3 +16,14 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn run build
+
+  deploy:
+    requires:
+      - build
+    filters:
+      branches:
+        only: master
+    steps:
+      - checkout
+      - run:
+        - yarn run deploy
