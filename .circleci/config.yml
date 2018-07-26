@@ -12,14 +12,14 @@ jobs:
           - v1-dependencies-
       - run:
           name: install packages
-          commands: yarn install
+          command: yarn install
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: build pages
-          commands: yarn run build
+          command: yarn run build
 
   deploy:
     docker:
@@ -29,7 +29,7 @@ jobs:
       - checkout
       - run:
           name: deploy to github pages
-          commands: yarn run deploy
+          command: yarn run deploy
 
 workflows:
   version: 2
