@@ -23,8 +23,7 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - run:
-        - yarn run deploy
+      - run: yarn run deploy
 
 workflows:
   version: 2
