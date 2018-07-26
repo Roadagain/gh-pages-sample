@@ -10,12 +10,16 @@ jobs:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           - v1-dependencies-
-      - run: yarn install
+      - run:
+          name: install packages
+          commands: yarn install
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn run build
+      - run:
+          name: build pages
+          commands: yarn run build
 
   deploy:
     docker:
@@ -23,7 +27,9 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - run: yarn run deploy
+      - run:
+          name: deploy to github pages
+          commands: yarn run deploy
 
 workflows:
   version: 2
