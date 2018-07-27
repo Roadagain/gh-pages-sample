@@ -39,9 +39,9 @@ jobs:
           at: .
       - run:
           name: add github to known_hosts
-          command:
-            - mkdir .ssh
-            - ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+          command: |
+            mkdir .ssh
+            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
       - add_ssh_keys:
           fingerprints:
             - "16:0f:4c:65:5b:90:c5:ee:8d:d4:de:30:96:de:bf:24"
