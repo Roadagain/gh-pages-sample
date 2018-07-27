@@ -40,7 +40,7 @@ jobs:
       - run:
           name: add github to known_hosts
           command: |
-            mkdir .ssh
+            mkdir ~/.ssh
             ssh-keyscan -H github.com >> ~/.ssh/known_hosts
       - add_ssh_keys:
           fingerprints:
