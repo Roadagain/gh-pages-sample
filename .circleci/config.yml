@@ -50,10 +50,11 @@ jobs:
 
 workflows:
   version: 2
-  triggers:
-    filters:
-      branches:
-        ignore: gh-pages
+  nightly:
+    triggers:
+      filters:
+        branches:
+          ignore: gh-pages
   build-deploy:
     jobs:
       - build
