@@ -2,6 +2,9 @@ jobs:
   build:
     docker:
       - image: circleci/node:7.10
+    ignore:
+      branches:
+        - gh-pages
     working_directory: ~/repo
     steps:
       - checkout
@@ -27,6 +30,9 @@ jobs:
   deploy:
     docker:
       - image: circleci/node:7.10
+    ignore:
+      branches:
+        - gh-pages
     working_directory: ~/repo
     steps:
       - attach_workspace:
@@ -51,6 +57,3 @@ workflows:
       - deploy:
           requires:
             - build
-        ignore:
-          branches:
-            - gh-pages
