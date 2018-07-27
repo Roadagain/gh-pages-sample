@@ -51,14 +51,15 @@ jobs:
 
 workflows:
   version: 2
-  nightly:
-    triggers:
-      filters:
-        branches:
-          ignore: gh-pages
   build-deploy:
     jobs:
       - build
+          filters:
+            branches:
+              ignore: gh-pages
       - deploy:
           requires:
             - build
+          filters:
+            branches:
+              ignore: gh-pages
