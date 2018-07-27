@@ -4,7 +4,8 @@ jobs:
       - image: circleci/node:7.10
     working_directory: ~/repo
     branches:
-      ignore: gh-pages
+      ignore:
+        - gh-pages
     steps:
       - checkout
       - restore_cache:
@@ -31,7 +32,8 @@ jobs:
       - image: circleci/node:7.10
     working_directory: ~/repo
     branches:
-      ignore: gh-pages
+      ignore:
+        - gh-pages
     steps:
       - attach_workspace:
           at: .
