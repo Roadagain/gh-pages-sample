@@ -20,6 +20,6 @@
   "scripts": {
     "build": "parcel build --public-url ./ --no-source-maps src/index.html",
     "start": "parcel src/index.html",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -m '[ci skip] Update'"
   }
 }

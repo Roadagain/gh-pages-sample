@@ -20,13 +20,31 @@ jobs:
       - run:
           name: build pages
           command: yarn run build
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - .
 
   deploy:
     docker:
       - image: circleci/node:7.10
     working_directory: ~/repo
     steps:
-      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: add github to known_hosts
+          command: |
+            mkdir ~/.ssh
+            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+      - add_ssh_keys:
+          fingerprints:
+            - "16:0f:4c:65:5b:90:c5:ee:8d:d4:de:30:96:de:bf:24"
+      - run:
+          name: set configs
+          command: |
+            git config --global user.name $USERNAME
+            git config --global user.name $EMAIL
       - run:
           name: deploy to github pages
           command: yarn run deploy
