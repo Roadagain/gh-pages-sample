@@ -9,10 +9,12 @@
   "private": false,
   "dependencies": {
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-plugin-styled-components": "^1.10.6",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "gh-pages": "^1.2.0",
