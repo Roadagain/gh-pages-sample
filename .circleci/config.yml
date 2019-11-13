@@ -39,7 +39,7 @@ jobs:
             ssh-keyscan -H github.com >> ~/.ssh/known_hosts
       - add_ssh_keys:
           fingerprints:
-            - "37:6c:19:e0:e3:dc:dd:ed:f2:98:47:7a:94:18:4d:35"
+            - "a8:8a:cd:e3:4b:a7:c3:a1:ce:8a:67:ca:88:8d:37:4d"
       - run:
           name: set configs
           command: |
