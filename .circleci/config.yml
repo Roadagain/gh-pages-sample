@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:7.10
+      - image: circleci/node:10.16.3
     working_directory: ~/repo
     steps:
       - checkout
@@ -27,7 +27,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/node:7.10
+      - image: circleci/node:10.16.3
     working_directory: ~/repo
     steps:
       - attach_workspace:
@@ -39,7 +39,7 @@ jobs:
             ssh-keyscan -H github.com >> ~/.ssh/known_hosts
       - add_ssh_keys:
           fingerprints:
-            - "16:0f:4c:65:5b:90:c5:ee:8d:d4:de:30:96:de:bf:24"
+            - "37:6c:19:e0:e3:dc:dd:ed:f2:98:47:7a:94:18:4d:35"
       - run:
           name: set configs
           command: |
